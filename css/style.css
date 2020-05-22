@@ -33,7 +33,8 @@ main {
   flex-direction: column;
   justify-content: flex-end;
   padding-bottom: 20px;
-  transition: background, filter, transform 400ms;
+  transition-property: background, filter, transform;
+  transition-duration: 500ms;
 }
 
 .color-area:active {
