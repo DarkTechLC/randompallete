@@ -1,0 +1,18 @@
+{
+  "name": "Random Pallete",
+  "description": "A random pallete generator",
+  "version": "1.0",
+   "manifest_version": 2,
+   "browser_action": {
+     "default_popup": "extension.html",
+     "default_icon": "img/refresh-ccw.svg"
+   },
+    "commands": {
+      "_execute_browser_action": {
+        "suggested_key": {
+          "default": "Alt+Shift+P"
+        },
+        "description": "A random pallete generator"
+      }
+    }
+}

@@ -1,0 +1,7 @@
+@import url('./style.css');
+
+html {
+  height: 500px;
+  overflow: hidden;
+  width: 300px;
+}
