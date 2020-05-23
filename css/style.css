@@ -110,6 +110,23 @@ main {
   width: 123px;
 }
 
+.copy-alert {
+  background: #08090A;
+  border-radius: 5px;
+  font-size: 2em;
+  left: 50%;
+  padding: 10px;
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hidden {
+  display: none;
+  transition: all 500ms;
+}
+
 footer {
   align-items: center;
   background: #08090A;

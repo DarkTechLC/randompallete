@@ -1,6 +1,7 @@
 const colorAreas = document.querySelectorAll(".color-area");
 const btnsLock = document.querySelectorAll(".btn-lock");
 const btnRefresh = document.querySelector("#btn-refresh");
+const copyAlert = document.querySelector("#copy-alert");
 
 const generateRandomHexadecimal = () => {
   const randomNumber = Math.random() * Math.random();
@@ -41,6 +42,11 @@ const lockColorArea = () => {
   });
 };
 
+const displayCopyAlert = () => {
+  copyAlert.classList.toggle("hidden");
+  setTimeout(() => copyAlert.classList.toggle("hidden"), 1000);
+};
+
 const copyToClipboard = () => {
   colorAreas.forEach((colorArea) => {
     colorArea.addEventListener("click", () => {
@@ -51,6 +57,7 @@ const copyToClipboard = () => {
       fakeInput.select();
       document.execCommand("copy");
       fakeInput.remove();
+      displayCopyAlert();
     });
   });
 };
@@ -80,7 +87,7 @@ const setPalleteSaved = () => {
 
   for (let i in palleteSaved) {
     const { color, locked } = palleteSaved[i];
-    const lockIcon = locked === "true" ? "img/lock.svg" : "img/unlock.svg";
+    const lockIcon = locked === "false" ? "img/unlock.svg" : "img/lock.svg";
 
     colorAreas[i].style.background = color;
     colorAreas[i].children[1].textContent = color;
@@ -105,6 +112,9 @@ start();
 
 btnRefresh.addEventListener("click", changeBackgroundColors);
 
-window.addEventListener("keydown", (event) => {
-  if (event.key === " ") changeBackgroundColors();
+window.addEventListener("keyup", (event) => {
+  if (event.key === " ") {
+    event.preventDefault();
+    changeBackgroundColors();
+  }
 });
