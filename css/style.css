@@ -29,6 +29,7 @@ header a {
 
 header img {
   height: 35px;
+  margin-right: 5px;
 }
 
 header p {
@@ -124,7 +125,6 @@ main {
 
 .hidden {
   display: none;
-  transition: all 500ms;
 }
 
 footer {

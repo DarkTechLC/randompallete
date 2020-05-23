@@ -3,57 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Luís Clício" />
+    <meta name="description" content="A random pallete generator" />
+    <meta name="keywords" content="random, pallete, generator, colors" />
+    <meta name="theme-color" content="#08090a" />
+    <meta name="msapplication-navbutton-color" content="#08090a" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#08090a" />
     <title>Random Pallete | DarkTech</title>
     <link rel="stylesheet" href="css/extension.css" />
   </head>
   <body>
     <header>
       <a href=".">
-        <img src="img/logo-icon-dt.svg" alt="Logo Random Pallete" />
+        <img src="img/logo-icon.svg" alt="Logo Random Pallete" />
         <p>Random Pallete</p>
       </a>
     </header>
 
     <main>
-      <div class="color-area" data-lock-color="false">
+      <section class="color-area" data-lock-color="false">
         <button class="btn btn-lock">
           <img src="img/unlock.svg" alt="Lock this color" />
         </button>
-        <p class="color-code">#08090a</p>
-      </div>
+        <p class="color-code"></p>
+      </section>
 
-      <div class="color-area" data-lock-color="false">
+      <section class="color-area" data-lock-color="false">
         <button class="btn btn-lock">
           <img src="img/unlock.svg" alt="Lock this color" />
         </button>
-        <p class="color-code">#08090a</p>
-      </div>
+        <p class="color-code"></p>
+      </section>
 
-      <div class="color-area" data-lock-color="false">
+      <section class="color-area" data-lock-color="false">
         <button class="btn btn-lock">
           <img src="img/unlock.svg" alt="Lock this color" />
         </button>
-        <p class="color-code">#08090a</p>
-      </div>
+        <p class="color-code"></p>
+      </section>
 
-      <div class="color-area" data-lock-color="false">
+      <section class="color-area" data-lock-color="false">
         <button class="btn btn-lock">
           <img src="img/unlock.svg" alt="Lock this color" />
         </button>
-        <p class="color-code">#08090a</p>
-      </div>
+        <p class="color-code"></p>
+      </section>
 
-      <div class="color-area" data-lock-color="false">
+      <section class="color-area" data-lock-color="false">
         <button class="btn btn-lock">
           <img src="img/unlock.svg" alt="Lock this color" />
         </button>
-        <p class="color-code">#08090a</p>
-      </div>
+        <p class="color-code"></p>
+      </section>
 
       <button id="btn-refresh" class="btn btn-refresh">
         <img src="img/refresh-ccw.svg" alt="Generate new pallete" />
       </button>
     </main>
+
+    <div id="copy-alert" class="copy-alert hidden">Copied!</div>
 
     <footer>
       <img src="img/logo-icon-dt.svg" alt="Logo DarkTech" />
