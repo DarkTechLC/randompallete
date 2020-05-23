@@ -4,7 +4,7 @@ const btnRefresh = document.querySelector("#btn-refresh");
 
 const generateRandomHexadecimal = () => {
   const randomNumber = Math.random() * Math.random();
-  const hexadecimal = randomNumber.toString(16).substr(6, 6);
+  const hexadecimal = randomNumber.toString(16).substr(8, 6);
   return `#${hexadecimal}`;
 };
 
@@ -39,16 +39,18 @@ const lockColorArea = () => {
   });
 };
 
-const copyToClipboard = (element) => {
-  element.addEventListener("click", (event) => {
-    event.stopPropagation();
-    const value = element.children[1].textContent;
-    const fakeInput = document.createElement("input");
-    document.body.appendChild(fakeInput);
-    fakeInput.value = value;
-    fakeInput.select();
-    document.execCommand("copy");
-    fakeInput.remove();
+const copyToClipboard = () => {
+  colorAreas.forEach((colorArea) => {
+    colorArea.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const value = colorArea.children[1].textContent;
+      const fakeInput = document.createElement("input");
+      document.body.appendChild(fakeInput);
+      fakeInput.value = value;
+      fakeInput.select();
+      document.execCommand("copy");
+      fakeInput.remove();
+    });
   });
 };
 
@@ -61,10 +63,9 @@ const changeBackgroundColors = () => {
       colorArea.style.background = hexadecimal;
       colorArea.children[1].textContent = hexadecimal;
     }
-
-    copyToClipboard(colorArea);
   });
 
+  copyToClipboard();
   savePallete();
 };
 
@@ -76,7 +77,7 @@ const getPalleteSaved = () => {
 const setPalleteSaved = () => {
   const palleteSaved = getPalleteSaved();
 
-  for (const i in palleteSaved) {
+  for (let i in palleteSaved) {
     const { color, locked } = palleteSaved[i];
     const lockIcon = locked === "true" ? "img/lock.svg" : "img/unlock.svg";
 
@@ -88,6 +89,8 @@ const setPalleteSaved = () => {
       lockIcon
     );
   }
+
+  copyToClipboard();
 };
 
 const start = () => {

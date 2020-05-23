@@ -5,7 +5,7 @@
    "manifest_version": 2,
    "browser_action": {
      "default_popup": "extension.html",
-     "default_icon": "img/refresh-ccw.svg"
+     "default_icon": "img/logo-icon-dt.png"
    },
     "commands": {
       "_execute_browser_action": {
