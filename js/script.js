@@ -24,7 +24,9 @@ const savePallete = () => {
 
 const lockColorArea = () => {
   btnsLock.forEach((btnLock) => {
-    btnLock.addEventListener("click", () => {
+    btnLock.addEventListener("click", (event) => {
+      event.stopPropagation();
+
       let locked = btnLock.parentElement.getAttribute("data-lock-color");
       let lockIcon;
 
@@ -41,8 +43,7 @@ const lockColorArea = () => {
 
 const copyToClipboard = () => {
   colorAreas.forEach((colorArea) => {
-    colorArea.addEventListener("click", (event) => {
-      event.stopPropagation();
+    colorArea.addEventListener("click", () => {
       const value = colorArea.children[1].textContent;
       const fakeInput = document.createElement("input");
       document.body.appendChild(fakeInput);
