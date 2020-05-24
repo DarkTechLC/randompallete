@@ -5,3 +5,7 @@ html {
   overflow: hidden;
   width: 300px;
 }
+
+footer p {
+  font-size: 1.4em;
+}

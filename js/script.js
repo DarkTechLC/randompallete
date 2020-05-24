@@ -44,7 +44,7 @@ const lockColorArea = () => {
 
 const displayCopyAlert = () => {
   copyAlert.classList.toggle("hidden");
-  setTimeout(() => copyAlert.classList.toggle("hidden"), 1000);
+  setTimeout(() => copyAlert.classList.toggle("hidden"), 1500);
 };
 
 const copyToClipboard = () => {
